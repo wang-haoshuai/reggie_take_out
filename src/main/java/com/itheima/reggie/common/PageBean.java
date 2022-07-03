@@ -1,4 +1,4 @@
-package com.itheima.reggie.entity;
+package com.itheima.reggie.common;
 
 import lombok.Data;
 
@@ -16,5 +16,5 @@ public class PageBean<T> {
     /**
      * 总数
      */
-    protected long total = 0;
+    protected long total;
 }

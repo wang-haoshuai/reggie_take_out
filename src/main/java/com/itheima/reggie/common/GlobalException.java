@@ -38,4 +38,9 @@ public class GlobalException {
         return R.error("未知异常");
     }
 
+    @ExceptionHandler(CustomException.class)
+    public R<String> exceptionHandler(CustomException ex) {
+        return R.error(ex.getMessage());
+    }
+
 }

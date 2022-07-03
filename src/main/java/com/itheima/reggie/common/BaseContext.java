@@ -12,5 +12,4 @@ public class BaseContext {
         return threadLocal.get();
     }
 
-
 }
