@@ -1,9 +1,23 @@
-reggie:
-  path: D:\Downloads\img\
+#reggie:
+#  path: D:\Downloads\img\
 
 server:
   port: 80
 spring:
+  application:
+    name: reggie
+#    上传文件大小默认1MB 超过1MB会报错
+  servlet:
+    multipart:
+#      不限制大小 可以修改为其他指定大小
+      max-file-size: -1
+      max-request-size: -1
+  devtools:
+    restart:
+      # 热部署模块
+      enabled: true
+      exclude: static/**,application.yml
+      additional-paths: src/main/java
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -19,3 +33,9 @@ mybatis-plus:
     banner: false
     db-config:
       id-type: assign_id
+
+qiniu:
+  accessKey: CQJTQBTDjMyTX-7gTfRi-A-HEoxn3nm0zd5mwIYb  # 公钥
+  secretKey: xSCjd_yeIcfJ09bxemcQNzx91UhtWE7tXxisjJZ3  # 私钥
+  bucketName: yu-xi # 存储空间名称
+  path: rejyp365v.hd-bkt.clouddn.com  # 域名地址

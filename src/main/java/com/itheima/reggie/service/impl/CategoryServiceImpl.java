@@ -26,7 +26,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
         LambdaQueryWrapper<Dish> dishLambdaQueryWrapper = new LambdaQueryWrapper<>();
         dishLambdaQueryWrapper.eq(Dish::getCategoryId, id);
         int dishCount = dishService.count(dishLambdaQueryWrapper);
-        if (dishCount>0) {
+        if (dishCount > 0) {
             throw new CustomException("该分类下有菜品关联");
         }
 
@@ -34,7 +34,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
         setmealLambdaQueryWrapper.eq(Setmeal::getCategoryId, id);
         int setMealCount = setmealService.count(setmealLambdaQueryWrapper);
 
-        if (setMealCount>0) {
+        if (setMealCount > 0) {
             throw new CustomException("该分类下有套餐关联");
         }
 
