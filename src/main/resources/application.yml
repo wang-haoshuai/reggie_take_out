@@ -1,3 +1,6 @@
+reggie:
+  path: D:\Downloads\img\
+
 server:
   port: 80
 spring:
